@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+config/secrets.json
+config/config.json
+config/influencers.json
+config/manual_watchlist.json
+data/
+*.log

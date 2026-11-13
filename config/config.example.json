@@ -1,0 +1,89 @@
+{
+  "network": "solana",
+  "poll_seconds": 20,
+  "http": {
+    "timeout_seconds": 15,
+    "max_retries": 2,
+    "backoff_seconds": 0.8,
+    "user_agent": "memecoin-early-warning-radar/0.1"
+  },
+  "discovery": {
+    "profiles": true,
+    "boosts": true,
+    "manual_watchlist": true,
+    "persistent_watchlist": true,
+    "max_candidates_per_cycle": 40
+  },
+  "filters": {
+    "max_age_minutes": 360,
+    "min_liquidity_usd": 25000,
+    "min_market_cap_usd": 50000,
+    "max_market_cap_usd": 10000000,
+    "min_volume_5m_usd": 3000,
+    "min_buys_5m": 15,
+    "max_price_change_5m_pct": 100
+  },
+  "alerts": {
+    "min_opportunity_score": 65,
+    "wait_opportunity_score": 50,
+    "max_risk_score_for_candidate": 50,
+    "cooldown_minutes_per_token": 20,
+    "send_wait_signals": true,
+    "send_avoid_signals": false,
+    "rug_watch": {
+      "enabled": true,
+      "min_risk_score": 65,
+      "min_market_activity": 55,
+      "cooldown_minutes": 60
+    },
+    "exit_warnings": {
+      "enabled": true,
+      "cooldown_minutes": 5,
+      "liquidity_drop_pct": 15,
+      "buy_sell_ratio_below": 0.8,
+      "price_drop_pct": 20,
+      "risk_jump_points": 25,
+      "sell_acceleration_multiple": 2.0
+    },
+    "collapsed_tokens": {
+      "enabled": true,
+      "max_price_drop_5m_pct": 45,
+      "max_price_drop_1h_pct": 75,
+      "max_snapshot_price_drop_pct": 70,
+      "max_snapshot_liquidity_drop_pct": 70,
+      "max_buy_sell_ratio": 0.25,
+      "min_sells_5m": 50
+    }
+  },
+  "ollama": {
+    "enabled": true,
+    "host": "http://localhost:11434",
+    "model": "qwen3.5:9b",
+    "temperature": 0.1,
+    "timeout_seconds": 180,
+    "think": false,
+    "max_output_tokens": 900,
+    "max_attempts": 2,
+    "retry_delay_seconds": 2,
+    "keep_alive": "15m",
+    "max_social_posts": 20,
+    "min_opportunity_to_analyze": 40
+  },
+  "dexscreener": {
+    "base_url": "https://api.dexscreener.com"
+  },
+  "goplus": {
+    "enabled": true,
+    "url": "https://api.gopluslabs.io/api/v1/solana/token_security",
+    "cache_minutes": 10
+  },
+  "x": {
+    "enabled": true,
+    "base_url": "https://api.x.com/2",
+    "max_results": 20
+  },
+  "lunarcrush": {
+    "enabled": true,
+    "base_url": "https://lunarcrush.com/api4"
+  }
+}
